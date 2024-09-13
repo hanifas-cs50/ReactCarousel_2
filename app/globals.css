@@ -3,15 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --dark_text: rgb(71, 85, 105);
+  --light_text: rgba(71, 85, 105, 0.7);
 }
 
 body {
@@ -20,8 +15,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.slick-dots button:before {
+  margin-top: 1rem;
+  font-size: 1rem !important;
+  color:var(--light_text) !important;
+}
+.slick-dots li.slick-active button:before {
+  color:var(--dark_text) !important;
 }
